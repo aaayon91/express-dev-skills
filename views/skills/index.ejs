@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Express Skill</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
 </head>
 <body>
     <h1>Skills</h1>
@@ -14,6 +15,9 @@
                 <a href="/skills/<%= s.id %>"><%= s.skill %></a>
                 -
                 <%= s.done ? 'done' : 'not done' %>
+                <form action="/skills/<%= s.id %>?_method=DELETE" class="delete-form" method="POST">
+                    <button type="submit">X</button>
+                </form>
             </li>
         <% }); %>
     </ul>
